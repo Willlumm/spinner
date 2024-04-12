@@ -4,6 +4,19 @@
         <title>Random Spinner</title>
     </head>
     <body>
-        Hello world!
+        <p id="winner"></p>
+        <form>
+            <textarea id="items" name="items" style="height: 70px; width: 250px"></textarea> 
+        </form>
+        <button onclick="spin()">Spin</button>
     </body>
+    <script>
+
+        function spin() {
+            items = document.getElementById("items").value.replace(/\s/g, "");
+            winner = items[Math.floor(Math.random() * items.length)];
+            document.getElementById("winner").innerHTML = winner;
+        }
+
+    </script>
 </html>
